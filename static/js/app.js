@@ -71,4 +71,8 @@ function createMap(baseballFields) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 96e17be6759ab0b7f4d74ee6538f2d01aebe6744
