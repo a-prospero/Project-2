@@ -472,12 +472,12 @@
     {
     "type": "Feature",
     "properties": {
-    "League": "N",
+    "League": "NFL",
     "Team": "New York Yankees",
     "Lat": 40.82917,
     "Long": -73.92639,
     "Field": "Yankee Stadium",
-    "Conference": "A"
+    "Conference": "AFC"
     },
     "geometry": {
     "type": "Point",
@@ -490,7 +490,7 @@
     {
     "type": "Feature",
     "properties": {
-    "League": "N",
+    "League": "NFL",
     "Team": "Chicago Cubs",
     "Lat": 41.94833,
     "Long": -87.65556,
@@ -508,7 +508,7 @@
     {
     "type": "Feature",
     "properties": {
-    "League": "N",
+    "League": "NFL",
     "Team": "Marlins Park",
     "Lat": 25.77806,
     "Long": -80.21972,
@@ -530,13 +530,13 @@
     "Long": -76.62167,
     "Lat": 39.28389,
     "Team": "Baltimore Orioles",
-    "League": "N",
+    "League": "NFL",
     "Conference": "N"
     },
     "geometry": {
     "type": "Point",
     "coordinates": [
-        -76.62167,
+    -76.62167,
     39.28389
     ]
     }

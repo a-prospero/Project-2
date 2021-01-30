@@ -1,9 +1,10 @@
 // Store our API endpoint inside queryUrl
-var queryUrl = "fields.json";
+var queryUrl = "nhl-stadiums.json";
 
 
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
+    console.log(data)
   // Once we get a response, send the data.features object to the createFeatures function
   createFeatures(data.features);
 });
@@ -11,8 +12,8 @@ function createFeatures(ballData) {
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the place and time of the earthquake
   function onEachFeature(feature, layer) {
-    layer.bindPopup("<h3>" + feature.properties.Field +
-      "</h3><hr><p>" + (feature.properties.Team) + "</p>");
+    layer.bindPopup("<h3>" + feature.properties.name +
+      "</h3><hr><p>" + (feature.properties.team) + "</p>");
   }
 
   // Create a GeoJSON layer containing the features array on the earthquakeData object
