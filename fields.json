@@ -1,0 +1,545 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -122.38917,
+    37.77861
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "San Francisco Giants",
+    "Lat": 37.77861,
+    "Long": -122.38917,
+    "Field": "AT&T Park",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -75.16639,
+    39.90583
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Philadelphia Phillies",
+    "Lat": 39.90583,
+    "Long": -75.16639,
+    "Field":  "Citizens Bank Park",
+    "Conference": "AFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -90.19306,
+    38.6225
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "St. Louis Cardinals",
+    "Lat": 38.6225,
+    "Long": -90.19306,
+    "Field": "Busch Stadium",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -73.84583,
+    40.75694
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "New York Mets",
+    "Lat": 40.75694,
+    "Long": -73.84583,
+    "Field": "Citi Field",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -117.88278,
+    33.80028
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Los Angeles Angels of Anaheim",
+    "Lat": 33.80028,
+    "Long": -117.88278,
+    "Field": "Angel Stadium of Anaheim",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -118.24,
+    34.07361
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Los Angeles Dodgers",
+    "Lat": 34.07361,
+    "Long": -118.24,
+    "Field":  "Dodger Stadium",
+    "Conference": "AFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -97.08278,
+    32.75139
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Texas Rangers",
+    "Lat": 32.75139,
+    "Long": -97.08278,
+    "Field": "Rangers Ballpark in Arlington",
+    "Conference": "AFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -83.04861,
+    42.33917
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Detroit Tigers",
+    "Lat": 42.33917,
+    "Long": -83.04861,
+    "Field": "Comerica Park",
+    "Conference": "AFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -104.99417,
+    39.75611
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Colorado Rockies",
+    "Lat": 39.75611,
+    "Long": -104.99417,
+    "Field": "Coors Field",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -94.48056,
+    39.05139
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Kansas City Royals",
+    "Lat": 39.05139,
+    "Long": -94.48056,
+    "Field": "Kauffman Stadium",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -87.97111,
+    43.02833
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Milwaukee Brewers",
+    "Lat": 43.02833,
+    "Long": -87.97111,
+    "Field":  "Miller Park",
+    "Conference": "AFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -84.50667,
+    39.0975
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Cincinnati Reds",
+    "Lat": 39.0975,
+    "Long": -84.50667,
+    "Field": "Great American Ball Park",
+    "Conference": "AFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -77.0075,
+    38.87278
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Washington Nationals",
+    "Lat": 38.87278,
+    "Long": -77.0075,
+    "Field": "Nationals Park",
+    "Conference": "AFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -71.0975,
+    42.34639
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Boston Red Sox",
+    "Lat": 42.34639,
+    "Long": -71.0975,
+    "Field":  "Fenway Park",
+    "Conference": "AFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -122.20056,
+    39.900833
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Oakland Athletics",
+    "Lat": 37.75167,
+    "Long": -122.20056,
+    "Field": "O.co Coliseum",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -95.35556,
+    29.75694
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Houston Astros",
+    "Lat": 29.75694,
+    "Long": -95.35556,
+    "Field": "Minute Maid Park",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -117.1566,
+    32.7073
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "San Diego Padres",
+    "Lat": 32.7073,
+    "Long": -117.1566,
+    "Field": "Petco Park",
+    "Conference": "AFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -81.68528,
+    41.49583
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Cleveland Indians",
+    "Lat": 41.49583,
+    "Long": -81.68528,
+    "Field": "Progressive Field",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -112.06694,
+    33.44528
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Arizona Diamondbacks",
+    "Lat": 33.44528,
+    "Long": -112.06694,
+    "Field": "Chase Field",
+    "Conference": "NFC"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -122.3325,
+    47.59139
+    ]
+    },
+    "properties": {
+    "League": "None",
+    "Team": "Seattle Mariners",
+    "Lat": 47.59139,
+    "Long": -122.3325,
+    "Field": "Safeco Field",
+    "Conference": "NONE"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -79.38917,
+    43.64139
+    ]
+    },
+    "properties": {
+    "League": "N",
+    "Team": "Toronto Blue Jays",
+    "Lat": 43.64139,
+    "Long": -79.38917,
+    "Field": "Rogers Centre",
+    "Conference": "A"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -82.65333,
+    27.76833
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Tampa Bay Rays",
+    "Lat": 27.76833,
+    "Long": -82.65333,
+    "Field": "Tropicana Field",
+    "Conference": "N"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -84.38944,
+    33.73528
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Atlanta Braves",
+    "Lat": 33.73528,
+    "Long": -84.38944,
+    "Field":  "Turner Field",
+    "Conference": "N"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -80.00583,
+    40.44694
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Pittsburgh Pirates",
+    "Lat": 40.44694,
+    "Long": -80.00583,
+    "Field":  "PNC Park",
+    "Conference": "A"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -93.27833,
+    44.98167
+    ]
+    },
+    "properties": {
+    "League": "NFL",
+    "Team": "Minnesota Twins",
+    "Lat": 44.98167,
+    "Long": -93.27833,
+    "Field":  "Target Field",
+    "Conference": "A"
+    },
+    "type": "Feature"
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "League": "NFL",
+    "Team": "Chicago White Sox",
+    "Lat": 41.83,
+    "Long": -87.63389,
+    "Field": "U.S. Cellular Field",
+    "Conference": "NFC"
+    },
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+        -87.63389,
+        41.83
+    ]
+    }
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "League": "N",
+    "Team": "New York Yankees",
+    "Lat": 40.82917,
+    "Long": -73.92639,
+    "Field": "Yankee Stadium",
+    "Conference": "A"
+    },
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+        -73.92639,
+        40.82917
+    ]
+    }
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "League": "N",
+    "Team": "Chicago Cubs",
+    "Lat": 41.94833,
+    "Long": -87.65556,
+    "Field": "Wrigley Field",
+    "Conference": "A"
+    },
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+        -87.65556,
+        41.94833
+    ]
+    }
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "League": "N",
+    "Team": "Marlins Park",
+    "Lat": 25.77806,
+    "Long": -80.21972,
+    "Field": "Miami Marlins",
+    "Conference": "A"
+    },
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+        -80.21972,
+        25.77806
+    ]
+    }
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "Field": "Oriole Park at Camden Yards",
+    "Long": -76.62167,
+    "Lat": 39.28389,
+    "Team": "Baltimore Orioles",
+    "League": "N",
+    "Conference": "N"
+    },
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+        -76.62167,
+    39.28389
+    ]
+    }
+    }
+    ]
+    }

@@ -1,5 +1,5 @@
 // Store our API endpoint inside queryUrl
-var queryUrl = "baseball.json";
+var queryUrl = "fields.json";
 
 
 // Perform a GET request to the query URL
@@ -8,26 +8,25 @@ d3.json(queryUrl, function(data) {
   createFeatures(data.features);
 });
 
-function createFeatures(earthquakeData) {
-
+function createFeatures(ballData) {
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the place and time of the earthquake
   function onEachFeature(feature, layer) {
-    layer.bindPopup("<h3>" + feature.properties.place +
-      "</h3><hr><p>" + new Date(feature.properties.time) + "</p>");
+    layer.bindPopup("<h3>" + feature.properties.Field +
+      "</h3><hr><p>" + (feature.properties.Team) + "</p>");
   }
 
   // Create a GeoJSON layer containing the features array on the earthquakeData object
   // Run the onEachFeature function once for each piece of data in the array
-  var earthquakes = L.geoJSON(earthquakeData, {
+  var fields = L.geoJSON(ballData, {
     onEachFeature: onEachFeature
   });
 
   // Sending our earthquakes layer to the createMap function
-  createMap(earthquakes);
+  createMap(fields);
 }
 
-function createMap(earthquakes) {
+function createMap(fields) {
 
   // Define streetmap and darkmap layers
   var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -54,7 +53,7 @@ function createMap(earthquakes) {
 
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
-    Earthquakes: earthquakes
+    Fields: fields
   };
 
   // Create our map, giving it the streetmap and earthquakes layers to display on load
@@ -63,7 +62,7 @@ function createMap(earthquakes) {
       37.09, -95.71
     ],
     zoom: 5,
-    layers: [streetmap, earthquakes]
+    layers: [streetmap, fields]
   });
 
   // Create a layer control

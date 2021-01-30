@@ -8,7 +8,7 @@ d3.json(queryUrl, function(data) {
   createFeatures(data.features);
 });
 
-function createFeatures(earthquakeData) {
+function createFeatures(nflData) {
 
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the place and time of the earthquake
@@ -19,15 +19,15 @@ function createFeatures(earthquakeData) {
 
   // Create a GeoJSON layer containing the features array on the earthquakeData object
   // Run the onEachFeature function once for each piece of data in the array
-  var earthquakes = L.geoJSON(earthquakeData, {
+  var stadiums = L.geoJSON(nflData, {
     onEachFeature: onEachFeature
   });
 
   // Sending our earthquakes layer to the createMap function
-  createMap(earthquakes);
+  createMap(stadiums);
 }
 
-function createMap(earthquakes) {
+function createMap(stadiums) {
 
   // Define streetmap and darkmap layers
   var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -54,7 +54,7 @@ function createMap(earthquakes) {
 
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
-    Earthquakes: earthquakes
+    Stadiums: stadiums
   };
 
   // Create our map, giving it the streetmap and earthquakes layers to display on load
@@ -63,8 +63,16 @@ function createMap(earthquakes) {
       37.09, -95.71
     ],
     zoom: 5,
-    layers: [streetmap, earthquakes]
+    layers: [streetmap, stadiums]
   });
+
+  // //Create football icon
+  // var myIcon = L.icon({
+  //   iconURL: 'football.png',
+  //   iconSize: [38, 95],
+  //   iconAnchor: [22, 94]
+  //     })
+  //   L.marker([stadiums], {icon: myIcon}).addTo(myMap);  
 
   // Create a layer control
   // Pass in our baseMaps and overlayMaps
