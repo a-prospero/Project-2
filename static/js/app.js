@@ -64,6 +64,20 @@ function createMap(baseballFields) {
     zoom: 5,
     layers: [streetmap, baseballFields]
   });
+  var supportsPassive = false;
+try {
+  var opts = Object.defineProperty({}, 'passive', {
+    get: function() {
+      supportsPassive = true;
+    }
+  });
+  window.addEventListener("testPassive", null, opts);
+  window.removeEventListener("testPassive", null, opts);
+} catch (e) {}
+
+    // Use our detect's results. passive applied if supported, capture will be false either way.
+elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : false); 
+
 
   // Create a layer control
   // Pass in our baseMaps and overlayMaps
