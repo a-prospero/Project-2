@@ -1,33 +1,32 @@
 // Store our API endpoint inside queryUrl
-var queryUrl = "stadiums.json";
+var queryUrl = "nhl-stadiums.json";
 
 
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
+    console.log(data)
   // Once we get a response, send the data.features object to the createFeatures function
   createFeatures(data.features);
 });
-
-function createFeatures(nflData) {
-
+function createFeatures(ballData) {
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the place and time of the earthquake
   function onEachFeature(feature, layer) {
-    layer.bindPopup("<h3>" + feature.properties.Stadium + "</h3><hr><p>" + feature.properties.Conference +
-      "</h3><hr><p>" + (feature.properties.Team) + "</p>");
+    layer.bindPopup("<h3>" + feature.properties.name +
+      "</h3><hr><p>" + (feature.properties.team) + "</p>");
   }
 
   // Create a GeoJSON layer containing the features array on the earthquakeData object
   // Run the onEachFeature function once for each piece of data in the array
-  var stadiums = L.geoJSON(nflData, {
+  var fields = L.geoJSON(ballData, {
     onEachFeature: onEachFeature
   });
 
   // Sending our earthquakes layer to the createMap function
-  createMap(stadiums);
+  createMap(fields);
 }
 
-function createMap(stadiums) {
+function createMap(fields) {
 
   // Define streetmap and darkmap layers
   var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -54,7 +53,7 @@ function createMap(stadiums) {
 
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
-    Stadiums: stadiums
+    Fields: fields
   };
 
   // Create our map, giving it the streetmap and earthquakes layers to display on load
@@ -63,16 +62,8 @@ function createMap(stadiums) {
       37.09, -95.71
     ],
     zoom: 5,
-    layers: [streetmap, stadiums]
+    layers: [streetmap, fields]
   });
-
-  // //Create football icon
-  // var myIcon = L.icon({
-  //   iconURL: 'football.png',
-  //   iconSize: [38, 95],
-  //   iconAnchor: [22, 94]
-  //     })
-  //   L.marker([stadiums], {icon: myIcon}).addTo(myMap);  
 
   // Create a layer control
   // Pass in our baseMaps and overlayMaps
