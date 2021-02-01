@@ -75,7 +75,7 @@ try {
 } catch (e) {}
 
     // Use our detect's results. passive applied if supported, capture will be false either way.
-elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : false); 
+// elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : false); 
 
 
   // Create a layer control
@@ -84,8 +84,104 @@ elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : fa
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
-}
-<<<<<<< HEAD:static/js/app.js
-=======
 
->>>>>>> aprospero:baseballmap.js
+  game_url = 'static/data/baseball_stats.csv'
+  function getData() {
+    d3.csv(game_url, function(game_data) {
+        fields = [];
+        h_wins=[];
+        h_losses =[];
+        v_wins = [];
+        v_losses = [];
+        game_data.date = +game_data.date;
+        game_data = game_data.filter(game_data => game_data.date > 20020000)
+        game_data.h_score = +game_data.h_score;
+        game_data.v_score = +game_data.v_score;
+        for(var i=0; i<game_data.length; i++) {
+            fields.push(game_data[i].park_id)
+            if (game_data[i].h_score > game_data[i].v_score) {
+                h_wins.push(game_data[i].h_name)
+                v_losses.push(game_data[i].v_name)
+            } else if (game_data[i].v_score > game_data[i].h_score) {
+                v_wins.push(game_data[i].v_name)
+                h_losses.push(game_data[i].h_name)
+            }
+        }
+        
+        h_wins.sort()
+        h_losses.sort()
+        v_losses.sort()
+        v_wins.sort()
+
+        home_wins = { };
+        for(var i = 0; i < h_wins.length; ++i) {
+            if(!home_wins[h_wins[i]])
+                home_wins[h_wins[i]] = 0;
+            ++home_wins[h_wins[i]];
+        }
+        
+        home_losses = { };
+        for(var i = 0; i < h_losses.length; ++i) {
+            if(!home_losses[h_losses[i]])
+                home_losses[h_losses[i]] = 0;
+            ++home_losses[h_losses[i]];
+        }
+
+        visiting_wins = { };
+        for(var i = 0; i < v_wins.length; ++i) {
+            if(!visiting_wins[v_wins[i]])
+                visiting_wins[v_wins[i]] = 0;
+            ++visiting_wins[v_wins[i]];
+        }
+
+        visiting_losses = { };
+        for(var i = 0; i < v_losses.length; ++i) {
+            if(!visiting_losses[v_losses[i]])
+                visiting_losses[v_losses[i]] = 0;
+            ++visiting_losses[v_losses[i]];
+        }
+
+        teams = Object.keys(home_wins)
+        teams.sort()
+        
+        var records = [];
+        for (var i = 0; i<teams.length; ++i) {    
+            records[i] = {
+                team: teams[i]
+            }
+        }
+
+        for (var i = 0; i<records.length; i++) {
+            records[i].home_wins = parseInt(Object.values(home_wins)[i])
+            records[i].home_losses = Object.values(home_losses)[i]
+            records[i].visiting_wins=Object.values(visiting_wins)[i]
+            records[i].visiting_losses = Object.values(visiting_losses)[i]
+            records[i].home_win_pct = Math.round(parseInt(Object.values(home_wins)[i]) /  (parseInt(Object.values(home_wins)[i]) + parseInt(Object.values(home_losses)[i])) * 100) 
+            records[i].visiting_win_pct = Math.round(parseInt(Object.values(visiting_wins)[i]) /  (parseInt(Object.values(visiting_wins)[i]) + parseInt(Object.values(visiting_losses)[i])) * 100) 
+        }
+        // console.log(records)
+        
+        myIcon = 'diamond.png'
+        order = [1,26,1,22,27,20,0,14,29,10,9,13,16,7,31,4,21,12,24,8,1,25,30,28,2,23,17,5,19,6,11,3]
+        for(var i = 1; i < 32; i++) {
+          if (i===2) { continue; }
+          var marker = L.marker([overlayMaps.Fields._layers[i]._latlng.lat, overlayMaps.Fields._layers[i]._latlng.lng],myIcon)
+          marker.bindTooltip(`Team: ${records[order[i]].team}<br>
+                              Home Wins: ${records[order[i]].home_wins}<br>
+                              Home Losses: ${records[order[i]].home_losses}<br>
+                              Home Win Percentage: ${records[order[i]].home_win_pct}%`).addTo(myMap)
+        }
+
+
+
+        // overlayMaps.Fields._layers[6]._latlng.bindTooltip('fdlkjsdflkjdslkjd')
+        console.log(overlayMaps.Fields._layers[1]._latlng.lng)
+        // console.log(overlayMaps.Fields._layers.length)
+        console.log(overlayMaps.Fields._layers)
+    })
+  }
+  getData();
+  
+
+
+}
