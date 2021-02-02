@@ -60,7 +60,7 @@ function createMap(fields) {
     center: [
       37.09, -95.71
     ],
-    zoom: 5,
+    zoom: 4,
     layers: [streetmap, fields]
   });
   var supportsPassive = false;
@@ -141,9 +141,13 @@ try {
             ++visiting_losses[v_losses[i]];
         }
 
-        teams = Object.keys(home_wins)
-        teams.sort()
-        
+        teams = ["Los Angeles Angels","Arizona Diamondbacks","Atlanta Braves","Baltimore Orioles","Boston Red Sox","Chicago White Sox",
+                 "Chicago Cubs","Cincinnati Reds","Cleveland Indians","Colorado Rockies","Detroit Tigers","Florida Marlins","Houstin Astros",
+                 "Kansas City Royals","Los Angeles Dodgers","Miami Marlins","Milwaukee Brewers","Minnesota Twins","Arizona Diamondbacks",
+                 "New York Yankees","New York Mets","Oakland Athletics","Philadelphia Phillies","Pittsburgh Pirates","San Diego Padres",
+                 "Seattle Mariners","San Francisco Giants","St. Louis Cardinals","Tampa Bay Rays","Texas Rangers","Toronto Bluejays",
+                 "Washington Nationals"]
+         
         var records = [];
         for (var i = 0; i<teams.length; ++i) {    
             records[i] = {
@@ -159,25 +163,26 @@ try {
             records[i].home_win_pct = Math.round(parseInt(Object.values(home_wins)[i]) /  (parseInt(Object.values(home_wins)[i]) + parseInt(Object.values(home_losses)[i])) * 100) 
             records[i].visiting_win_pct = Math.round(parseInt(Object.values(visiting_wins)[i]) /  (parseInt(Object.values(visiting_wins)[i]) + parseInt(Object.values(visiting_losses)[i])) * 100) 
         }
-        // console.log(records)
         
-        myIcon = 'diamond.png'
+        // order = [1,26,1,22,27,20,0,14,29,10,9,13,16,7,31,4,21,12,24,8,1,25,30,28,2,23,17,5,19,6,11,3]
+        // for(var i = 1; i < 32; i++) {
+        //   if (i===2) { continue; }
+        //   var marker = L.marker([overlayMaps.Fields._layers[i]._latlng.lat, overlayMaps.Fields._layers[i]._latlng.lng],marker)
+        //   marker.bindTooltip(`Team: ${records[order[i]].team}<br>
+        //                       Home Wins: ${records[order[i]].home_wins}<br>
+        //                       Home Losses: ${records[order[i]].home_losses}<br>
+        //                       Home Win Percentage: ${records[order[i]].home_win_pct}%`).addTo(myMap)
+        // }
         order = [1,26,1,22,27,20,0,14,29,10,9,13,16,7,31,4,21,12,24,8,1,25,30,28,2,23,17,5,19,6,11,3]
         for(var i = 1; i < 32; i++) {
           if (i===2) { continue; }
-          var marker = L.marker([overlayMaps.Fields._layers[i]._latlng.lat, overlayMaps.Fields._layers[i]._latlng.lng],myIcon)
+          var marker = L.circle([overlayMaps.Fields._layers[i]._latlng.lat, overlayMaps.Fields._layers[i]._latlng.lng],
+            {radius: ((records[order[i]].home_win_pct) - 45) * 1000})
           marker.bindTooltip(`Team: ${records[order[i]].team}<br>
                               Home Wins: ${records[order[i]].home_wins}<br>
                               Home Losses: ${records[order[i]].home_losses}<br>
                               Home Win Percentage: ${records[order[i]].home_win_pct}%`).addTo(myMap)
         }
-
-
-
-        // overlayMaps.Fields._layers[6]._latlng.bindTooltip('fdlkjsdflkjdslkjd')
-        console.log(overlayMaps.Fields._layers[1]._latlng.lng)
-        // console.log(overlayMaps.Fields._layers.length)
-        console.log(overlayMaps.Fields._layers)
     })
   }
   getData();
