@@ -1,33 +1,26 @@
-// Store our API endpoint inside queryUrl
+// Create variables for data files
 var queryUrl = "fields.json";
-
-
-// Perform a GET request to the query URL
+var baseball_url = 'static/data/baseball_stats.csv';
+// Create variarable for icon
+var diamondIcon = L.icon({iconUrl: 'diamond.png',
+  iconSize: [25,25]})
+// Perform a GET request to the query URL and send data.features to createFeatures function
 d3.json(queryUrl, function(data) {
-  // Once we get a response, send the data.features object to the createFeatures function
   createFeatures(data.features);
-});
-function createFeatures(ballData) {
-  // Define a function we want to run once for each feature in the features array
-  // Give each feature a popup describing the place and time of the earthquake
-  function onEachFeature(feature, layer) {
-    layer.bindPopup("<h3>" + feature.properties.Field +
-      "</h3><hr><p>" + (feature.properties.Team) + "</p>");
-  }
-
-  // Create a GeoJSON layer containing the features array on the earthquakeData object
-  // Run the onEachFeature function once for each piece of data in the array
-  var fields = L.geoJSON(ballData, {
-    onEachFeature: onEachFeature
   });
-
-  // Sending our earthquakes layer to the createMap function
-  createMap(fields);
+// Define a function we want to run once for each feature in the features array
+function createFeatures(ballData) {
+  var baseball = L.geoJson(ballData  ,{
+    pointToLayer: function(feature,latlng){
+      return L.marker(latlng,{icon: diamondIcon});
+    }
+  })
+  createMap(baseball);
 }
 
-function createMap(fields) {
+function createMap(baseball) {
 
-  // Define streetmap and darkmap layers
+  // Define streetmap layer
   var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
     tileSize: 512,
@@ -37,6 +30,7 @@ function createMap(fields) {
     accessToken: API_KEY
   });
 
+  // Define darkmap layer
   var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
     maxZoom: 18,
@@ -52,7 +46,7 @@ function createMap(fields) {
 
   // Create overlay object to hold our overlay layer
   var overlayMaps = {
-    Fields: fields
+    Baseball: baseball
   };
 
   // Create our map, giving it the streetmap and earthquakes layers to display on load
@@ -61,34 +55,28 @@ function createMap(fields) {
       37.09, -95.71
     ],
     zoom: 4,
-    layers: [streetmap, fields]
+    layers: [streetmap, baseball]
   });
-  var supportsPassive = false;
-try {
-  var opts = Object.defineProperty({}, 'passive', {
-    get: function() {
-      supportsPassive = true;
-    }
-  });
-  window.addEventListener("testPassive", null, opts);
-  window.removeEventListener("testPassive", null, opts);
-} catch (e) {}
+  
+    var supportsPassive = false;
+  try {
+    var opts = Object.defineProperty({}, 'passive', {
+      get: function() {
+        supportsPassive = true;
+      }
+    });
+    window.addEventListener("testPassive", null, opts);
+    window.removeEventListener("testPassive", null, opts);
+  } catch (e) {}
 
-    // Use our detect's results. passive applied if supported, capture will be false either way.
-// elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : false); 
-
-
-  // Create a layer control
-  // Pass in our baseMaps and overlayMaps
-  // Add the layer control to the map
+  // Create a layer control with baseMaps and overlayMaps, add to map
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
 
-  game_url = 'static/data/baseball_stats.csv'
+  // Read and parse data from baseball database
   function getData() {
-    d3.csv(game_url, function(game_data) {
-        fields = [];
+    d3.csv(baseball_url, function(game_data) {
         h_wins=[];
         h_losses =[];
         v_wins = [];
@@ -98,7 +86,6 @@ try {
         game_data.h_score = +game_data.h_score;
         game_data.v_score = +game_data.v_score;
         for(var i=0; i<game_data.length; i++) {
-            fields.push(game_data[i].park_id)
             if (game_data[i].h_score > game_data[i].v_score) {
                 h_wins.push(game_data[i].h_name)
                 v_losses.push(game_data[i].v_name)
@@ -108,6 +95,7 @@ try {
             }
         }
         
+        // Break down wins and losses, home and away, by team
         h_wins.sort()
         h_losses.sort()
         v_losses.sort()
@@ -141,6 +129,7 @@ try {
             ++visiting_losses[v_losses[i]];
         }
 
+        // List all teams in the order they appear in geoJSON
         teams = ["Los Angeles Angels","Arizona Diamondbacks","Atlanta Braves","Baltimore Orioles","Boston Red Sox","Chicago White Sox",
                  "Chicago Cubs","Cincinnati Reds","Cleveland Indians","Colorado Rockies","Detroit Tigers","Florida Marlins","Houstin Astros",
                  "Kansas City Royals","Los Angeles Dodgers","Miami Marlins","Milwaukee Brewers","Minnesota Twins","Arizona Diamondbacks",
@@ -163,17 +152,16 @@ try {
             records[i].home_win_pct = Math.round(parseInt(Object.values(home_wins)[i]) /  (parseInt(Object.values(home_wins)[i]) + parseInt(Object.values(home_losses)[i])) * 100) 
             records[i].visiting_win_pct = Math.round(parseInt(Object.values(visiting_wins)[i]) /  (parseInt(Object.values(visiting_wins)[i]) + parseInt(Object.values(visiting_losses)[i])) * 100) 
         }
-        
         order = [1,26,1,22,27,20,0,14,29,10,9,13,16,7,31,4,21,12,24,8,1,25,30,28,2,23,17,5,19,6,11,3]
-        var diamondIcon = L.icon({iconUrl: 'diamond.png',
-                                  iconSize: [25,25]})
+        
+        // Iterate through records objects and create tooltips and add to baseball layer
         for(var i = 1; i < 32; i++) {
           if (i===2) { continue; }
-          var marker = L.marker([overlayMaps.Fields._layers[i]._latlng.lat, overlayMaps.Fields._layers[i]._latlng.lng],{icon: diamondIcon})
+          var marker = L.marker([overlayMaps.Baseball._layers[i]._latlng.lat, overlayMaps.Baseball._layers[i]._latlng.lng],{icon: diamondIcon})
           marker.bindTooltip(`Team: ${records[order[i]].team}<br>
                               Home Wins: ${records[order[i]].home_wins}<br>
                               Home Losses: ${records[order[i]].home_losses}<br>
-                              Home Win Percentage: ${records[order[i]].home_win_pct}%`).addTo(myMap)
+                              Home Win Percentage: ${records[order[i]].home_win_pct}%`).addTo(overlayMaps.Baseball)
         }
       })
   }
