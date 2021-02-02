@@ -164,29 +164,18 @@ try {
             records[i].visiting_win_pct = Math.round(parseInt(Object.values(visiting_wins)[i]) /  (parseInt(Object.values(visiting_wins)[i]) + parseInt(Object.values(visiting_losses)[i])) * 100) 
         }
         
-        // order = [1,26,1,22,27,20,0,14,29,10,9,13,16,7,31,4,21,12,24,8,1,25,30,28,2,23,17,5,19,6,11,3]
-        // for(var i = 1; i < 32; i++) {
-        //   if (i===2) { continue; }
-        //   var marker = L.marker([overlayMaps.Fields._layers[i]._latlng.lat, overlayMaps.Fields._layers[i]._latlng.lng],marker)
-        //   marker.bindTooltip(`Team: ${records[order[i]].team}<br>
-        //                       Home Wins: ${records[order[i]].home_wins}<br>
-        //                       Home Losses: ${records[order[i]].home_losses}<br>
-        //                       Home Win Percentage: ${records[order[i]].home_win_pct}%`).addTo(myMap)
-        // }
         order = [1,26,1,22,27,20,0,14,29,10,9,13,16,7,31,4,21,12,24,8,1,25,30,28,2,23,17,5,19,6,11,3]
+        var diamondIcon = L.icon({iconUrl: 'diamond.png',
+                                  iconSize: [25,25]})
         for(var i = 1; i < 32; i++) {
           if (i===2) { continue; }
-          var marker = L.circle([overlayMaps.Fields._layers[i]._latlng.lat, overlayMaps.Fields._layers[i]._latlng.lng],
-            {radius: ((records[order[i]].home_win_pct) - 45) * 1000})
+          var marker = L.marker([overlayMaps.Fields._layers[i]._latlng.lat, overlayMaps.Fields._layers[i]._latlng.lng],{icon: diamondIcon})
           marker.bindTooltip(`Team: ${records[order[i]].team}<br>
                               Home Wins: ${records[order[i]].home_wins}<br>
                               Home Losses: ${records[order[i]].home_losses}<br>
                               Home Win Percentage: ${records[order[i]].home_win_pct}%`).addTo(myMap)
         }
-    })
+      })
   }
   getData();
-  
-
-
 }
