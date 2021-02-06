@@ -13,8 +13,13 @@ function createFeatures(nflData) {
   // Define a function we want to run once for each feature in the features array
   // Give each feature a popup describing the team and stadium
   function onEachFeature(feature, layer) {
+
     layer.bindPopup("<h3>" + (feature.properties.Stadium) + "</h3><hr><p>" + (feature.properties.Team) + " (" + feature.properties.Conference + ")" 
     + "</p><hr><p>" + "Wins at home: " + (feature.properties.Homefield_Wins) + "</p> \r\n" + "<p>" + "Homefield Advantage Ranking: "+ (feature.properties.Homefield_adv_rank) + "</p>");
+    layer.bindTooltip( `Team: ${feature.properties.Team}<br>
+                        Home Wins: ${feature.properties.Homefield_Wins}<br>
+                        Home Losses: N/A <br>
+                        Home Win Percentage: N/A`);
   }
 
   // Create a GeoJSON layer containing the features array on the stadium object

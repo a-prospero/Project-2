@@ -1,0 +1,250 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "// Store our API endpoint inside queryUrl\nvar queryUrl = \"stadiums.json\";\n\n\n// Perform a GET request to the query URL\nd3.json(queryUrl, function(data) {\n  // Once we get a response, send the data.features object to the createFeatures function\n  createFeatures(data.features);\n});\n\nfunction createFeatures(nflData) {\n\n  // Define a function we want to run once for each feature in the features array\n  // Give each feature a popup describing the team and stadium\n  function onEachFeature(feature, layer) {\n    layer.bindPopup(\"<h3>\" + (feature.properties.Stadium) + \"</h3><hr><p>\" + (feature.properties.Team) + \" (\" + feature.properties.Conference + \")\" \n    + \"</p><hr><p>\" + \"Wins at home: \" + (feature.properties.Homefield_Wins) + \"</p> \\r\\n\" + \"<p>\" + \"Homefield Advantage Ranking: \"+ (feature.properties.Homefield_adv_rank) + \"</p>\");\n  }\n\n  // Create a GeoJSON layer containing the features array on the stadium object\n  // Run the onEachFeature function once for each piece of data in the array\n  var stadiums = L.geoJSON(nflData, {\n    onEachFeature: onEachFeature\n  });\n\n  // Sending our earthquakes layer to the createMap function\n  createMap(stadiums);\n}\n\nfunction createMap(stadiums) {\n\n  // Define streetmap and darkmap layers\n  var streetmap = L.tileLayer(\"https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}\", {\n    attribution: \"© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>\",\n    tileSize: 512,\n    maxZoom: 18,\n    zoomOffset: -1,\n    id: \"mapbox/streets-v11\",\n    accessToken: API_KEY\n  });\n\n  var darkmap = L.tileLayer(\"https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}\", {\n    attribution: \"Map data &copy; <a href=\\\"https://www.openstreetmap.org/\\\">OpenStreetMap</a> contributors, <a href=\\\"https://creativecommons.org/licenses/by-sa/2.0/\\\">CC-BY-SA</a>, Imagery © <a href=\\\"https://www.mapbox.com/\\\">Mapbox</a>\",\n    maxZoom: 18,\n    id: \"dark-v10\",\n    accessToken: API_KEY\n  });\n\n  // Define a baseMaps object to hold our base layers\n  var baseMaps = {\n    \"Street Map\": streetmap,\n    \"Dark Map\": darkmap\n  };\n\n  // Create overlay object to hold our overlay layer\n  var overlayMaps = {\n    Stadiums: stadiums\n  };\n\n  // Create our map, giving it the streetmap and stadiums layers to display on load\n  var myMap = L.map(\"map\", {\n    center: [\n      37.09, -95.71\n    ],\n    zoom: 5,\n    layers: [streetmap, stadiums]\n  });\n\n  // //Create football icon\n  // var myIcon = L.icon({\n  //   iconURL: 'football.png',\n  //   iconSize: [38, 95],\n  //   iconAnchor: [22, 94]\n  //     })\n  //   L.marker([stadiums], {icon: myIcon}).addTo(myMap);  \n\n  // Create a layer control\n  // Pass in our baseMaps and overlayMaps\n  // Add the layer control to the map\n  L.control.layers(baseMaps, overlayMaps, {\n    collapsed: false\n  }).addTo(myMap);\n}\n\n",
+			"settings":
+			{
+				"buffer_size": 3011,
+				"line_ending": "Windows",
+				"name": "// Store our API endpoint inside queryUrl"
+			}
+		},
+		{
+			"contents": "{ \"type\": \"FeatureCollection\", \"features\": [ { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-86.77861, 36.15917] }, \"properties\" : { \"name\":\"Bridgestone Arena\", \"team\":\"Nashville Predators\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-80.32556, 26.15833] }, \"properties\" : { \"name\":\"BB&T Center\", \"team\":\"Florida Panthers\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-73.56944, 45.49611] }, \"properties\" : { \"name\":\"Bell Centre\", \"team\":\"Montreal Canadiens\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-96.81028, 32.79056] }, \"properties\" : { \"name\":\"American Airlines Center\", \"team\":\"Dallas Stars\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-79.37917, 43.64333] }, \"properties\" : { \"name\":\"Air Canada Centre\", \"team\":\"Toronto Maple Leafs\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-79.98917, 40.43944] }, \"properties\" : { \"name\":\"Consol Energy Center\", \"team\":\"Pittsburgh Penguins\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-117.87667, 33.80778] }, \"properties\" : { \"name\":\"Honda Center\", \"team\":\"Anaheim Ducks\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-112.26111, 33.53194] }, \"properties\" : { \"name\":\"Jobing.com Arena\", \"team\":\"Phoenix Coyotes\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-78.87639, 42.875] }, \"properties\" : { \"name\":\"First Niagara Center\", \"team\":\"Buffalo Sabres\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-121.90111, 37.33278] }, \"properties\" : { \"name\":\"HP Pavilion at San Jose\", \"team\":\"San Jose Sharks\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-97.14361, 49.89278] }, \"properties\" : { \"name\":\"MTS Centre\", \"team\":\"Winnipeg Jets\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-83.05139, 42.32528] }, \"properties\" : { \"name\":\"Joe Louis Arena\", \"team\":\"Detroit Red Wings\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-73.59056, 40.72278] }, \"properties\" : { \"name\":\"Nassau Veterans Memorial Coliseum\", \"team\":\"New York Islanders\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-83.00611, 39.9692833] }, \"properties\" : { \"name\":\"Nationwide Arena\", \"team\":\"Columbus Blue Jackets\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-105.0075, 39.74861] }, \"properties\" : { \"name\":\"Pepsi Center\", \"team\":\"Colorado Avalanche\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-78.72194, 35.80333] }, \"properties\" : { \"name\":\"PNC Arena\", \"team\":\"Carolina Hurricanes\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-73.99361, 40.75056] }, \"properties\" : { \"name\":\"Madison Square Garden\", \"team\":\"New York Rangers\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-113.45611, 53.57139] }, \"properties\" : { \"name\":\"Rexall Place\", \"team\":\"Edmonton Oilers\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-123.10889, 49.27778] }, \"properties\" : { \"name\":\"Rogers Arena\", \"team\":\"Vancouver Canucks\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-75.92722, 45.29694] }, \"properties\" : { \"name\":\"Scotiabank Place\", \"team\":\"Ottawa Senators\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-90.2025, 38.62667] }, \"properties\" : { \"name\":\"Scottrade Center\", \"team\":\"\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-74.17111, 40.73361] }, \"properties\" : { \"name\":\"Prudential Center\", \"team\":\"New Jersey Devils\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-114.05194, 51.0375] }, \"properties\" : { \"name\":\"Scotiabank Saddledome\", \"team\":\"Calgary Flames\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-118.26722, 34.04306] }, \"properties\" : { \"name\":\"Staples Center\", \"team\":\"Los Angeles Kings\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-82.45194, 27.94278] }, \"properties\" : { \"name\":\"Tampa Bay Times Forum\", \"team\":\"Tampa Bay Lightning\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-87.67417, 41.88056] }, \"properties\" : { \"name\":\"United Center\", \"team\":\"Chicago Blackhawks\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-71.0622278, 42.3663028] }, \"properties\" : { \"name\":\"TD Garden\", \"team\":\"Boston Bruins\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-75.17194, 39.90111] }, \"properties\" : { \"name\":\"Wells Fargo Center\", \"team\":\"Philadelphia Flyers\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-93.10111, 44.94472] }, \"properties\" : { \"name\":\"Xcel Energy Center\", \"team\":\"Minnesota Wild\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-113.47611, 53.55972] }, \"properties\" : { \"name\":\"Commonwealth Stadium\", \"team\":\"\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-77.02083, 38.89806] }, \"properties\" : { \"name\":\"Verizon Center\", \"team\":\"Washington Capitals\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-78.78694, 42.77361] }, \"properties\" : { \"name\":\"Ralph Wilson Stadium\", \"team\":\"\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-114.12139, 51.0703278] }, \"properties\" : { \"name\":\"McMahon Stadium\", \"team\":\"\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-80.01583, 40.44667] }, \"properties\" : { \"name\":\"Heinz Field\", \"team\":\"\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-87.65556, 41.94833] }, \"properties\" : { \"name\":\"Wrigley Field\", \"team\":\"\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-75.16639, 39.90583] }, \"properties\" : { \"name\":\"Citizens Bank Park\", \"team\":\"\" } }, { \"type\" : \"Feature\", \"geometry\": { \"type\":\"Point\", \"coordinates\" : [-71.0975, 42.34639] }, \"properties\" : { \"name\":\"Fenway Park\", \"team\":\"\" } } ] }",
+			"settings":
+			{
+				"buffer_size": 6166,
+				"line_ending": "Windows",
+				"name": "{ \"type\": \"FeatureCollection\", \"features\": [ { \"ty"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/pwitw/Workspace/du-den-data-pt-08-2020-u-c/09-SQL/1/Activities/07-Stu_Hide_and_Seek/Resources/WordAssociation.sql",
+		"/C/Users/pwitw/Workspace/du-den-data-pt-08-2020-u-c/10-Advanced-Data-Storage-and-Retrieval/1/Activities/04-Stu_ReadAllTheSQLs/Resources/zip_census.sqlite",
+		"/C/Users/pwitw/Workspace/du-den-data-pt-08-2020-u-c/10-Advanced-Data-Storage-and-Retrieval/1/Activities/11-Stu_Surfer_SQL/Unsolved/surfers_boards.sqlite",
+		"/C/Users/pwitw/Workspace/du-den-data-pt-08-2020-u-c/10-Advanced-Data-Storage-and-Retrieval/2/Activities/02-Stu_SharkSearch/Resources/sharks.sql",
+		"/C/Users/pwitw/Homework repositories/sqlalchemy-challenge/Resources/hawaii.sqlite"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"fake_df",
+			"paradise_df = fake_df[(['Wind Speed'] < 10) & \n                       (fake_df['Cloudiness']==0) & \n                       ((fake_df['Max Temp']>70) & (fake_df['Max Temp'] <= 80))]\nparadise_df",
+			"fake_df"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"clean_df"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								152,
+								152
+							]
+						],
+						"settings":
+						{
+							"auto_name": "// Store our API endpoint inside queryUrl",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1249,
+								1249
+							]
+						],
+						"settings":
+						{
+							"auto_name": "{ \"type\": \"FeatureCollection\", \"features\": [ { \"ty",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "nflmap_c.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
