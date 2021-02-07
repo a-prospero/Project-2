@@ -19,6 +19,16 @@ function createFeatures(hockeyData) {
   // Create a GeoJSON layer containing the features array on the earthquakeData object
   // Run the onEachFeature function once for each piece of data in the array
   var arenas = L.geoJSON(hockeyData, {
+    pointToLayer: function(feature, pointLayer){
+      return new L.circle(pointLayer, 
+        {
+          color: 'black',
+          fillColor: 'black',
+          opacity: 0,
+          fillOpacity: 0.8,
+          radius: 20000
+        }) 
+    },
     onEachFeature: onEachFeature
   });
 
