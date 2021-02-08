@@ -1,14 +1,13 @@
 // Store our API endpoint inside queryUrl
-var fIcon = L.icon({
-  iconURL: 'football.png',
+var footballIcon = L.icon({
+  iconURL: 'images/football.png',
   iconSize: [25, 25],
-  iconAnchor: [22, 94]
 });
 
 arenaTypes = ['Football Stadiums', 'Baseball Stadiums', 'Hockey Arenas'];
 
 
-var queryUrl = [ "stadiums.json"]
+var queryUrl = "stadiums.json"
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
   // Once we get a response, send the data.features object to the createFeatures function

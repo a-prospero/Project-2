@@ -2,6 +2,12 @@
 var queryUrl = "stadiums.json";
 
 
+//football image for markers
+var footballIcon = L.icon({
+  iconURL: 'images/football.png',
+  iconSize: [25, 25],
+});
+
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
   // Once we get a response, send the data.features object to the createFeatures function
@@ -28,7 +34,7 @@ function createFeatures(nflData) {
     onEachFeature: onEachFeature
   });
 
-  // Sending our earthquakes layer to the createMap function
+  // Sending our stadiums layer to the createMap function
   createMap(stadiums);
 }
 

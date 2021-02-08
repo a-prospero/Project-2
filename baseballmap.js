@@ -2,7 +2,7 @@
 var queryUrl = "fields.json";
 var baseball_url = 'static/data/baseball_stats.csv';
 // Create variarable for icon
-var diamondIcon = L.icon({iconUrl: 'diamond.png',
+var diamondIcon = L.icon({iconUrl: 'images/diamond.png',
   iconSize: [25,25]})
 // Perform a GET request to the query URL and send data.features to createFeatures function
 d3.json(queryUrl, function(data) {
