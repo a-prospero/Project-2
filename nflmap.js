@@ -2,6 +2,12 @@
 var queryUrl = "stadiums.json";
 
 
+//football image for markers
+var footballIcon = L.icon({
+  iconURL: 'images/football.png',
+  iconSize: [25, 25],
+});
+
 // Perform a GET request to the query URL
 d3.json(queryUrl, function(data) {
   // Once we get a response, send the data.features object to the createFeatures function
@@ -11,19 +17,24 @@ d3.json(queryUrl, function(data) {
 function createFeatures(nflData) {
 
   // Define a function we want to run once for each feature in the features array
-  // Give each feature a popup describing the place and time of the earthquake
+  // Give each feature a popup describing the team and stadium
   function onEachFeature(feature, layer) {
-    layer.bindPopup("<h3>" + feature.properties.Stadium + "</h3><hr><p>" + feature.properties.Conference +
-      "</h3><hr><p>" + (feature.properties.Team) + "</p>");
+
+    layer.bindPopup("<h3>" + (feature.properties.Stadium) + "</h3><hr><p>" + (feature.properties.Team) + " (" + feature.properties.Conference + ")" 
+    + "</p><hr><p>" + "Wins at home: " + (feature.properties.Homefield_Wins) + "</p> \r\n" + "<p>" + "Homefield Advantage Ranking: "+ (feature.properties.Homefield_adv_rank) + "</p>");
+    layer.bindTooltip( `Team: ${feature.properties.Team}<br>
+                        Home Wins: ${feature.properties.Homefield_Wins}<br>
+                        Home Losses: N/A <br>
+                        Home Win Percentage: N/A`);
   }
 
-  // Create a GeoJSON layer containing the features array on the earthquakeData object
+  // Create a GeoJSON layer containing the features array on the stadium object
   // Run the onEachFeature function once for each piece of data in the array
   var stadiums = L.geoJSON(nflData, {
     onEachFeature: onEachFeature
   });
 
-  // Sending our earthquakes layer to the createMap function
+  // Sending our stadiums layer to the createMap function
   createMap(stadiums);
 }
 
@@ -57,7 +68,7 @@ function createMap(stadiums) {
     Stadiums: stadiums
   };
 
-  // Create our map, giving it the streetmap and earthquakes layers to display on load
+  // Create our map, giving it the streetmap and stadiums layers to display on load
   var myMap = L.map("map", {
     center: [
       37.09, -95.71

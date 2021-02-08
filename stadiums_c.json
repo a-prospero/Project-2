@@ -16,10 +16,7 @@
     "Long": -74.074444,
     "Stadium": "MetLife Stadium",
     "Conference": "NFC",
-    "Elevation": "7 ft",
     "Homefield_Wins": 72,
-    "Homefield_Losses": 75,
-    "Home Win Percentage": "48.98%",
     "Homefield_adv_rank": "25 of 32"
     },
     "type": "Feature"
@@ -39,10 +36,7 @@
     "Long": -74.074444,
     "Stadium": "MetLife Stadium",
     "Conference": "AFC",
-    "Elevation": "7 ft",
     "Homefield_Wins": 77,
-    "Homefield_Losses": 68,
-    "Home Win Percentage": "53.1%",
     "Homefield_adv_rank": "22 of 32"
     },
     "type": "Feature"
@@ -62,10 +56,7 @@
     "Long": -88.062222,
     "Stadium": "Lambeau Field",
     "Conference": "NFC",
-    "Elevation": "627 ft",
     "Homefield_Wins": 110,
-    "Homefield_Losses": 46,
-    "Home Win Percentage": "70.51%",
     "Homefield_adv_rank": "2 of 32"
     },
     "type": "Feature"
@@ -85,10 +76,7 @@
     "Long": -97.092778,
     "Stadium": "AT&T Stadium",
     "Conference": "NFC",
-    "Elevation": "568 ft",
     "Homefield_Wins": 87,
-    "Homefield_Losses": 62,
-    "Home Win Percentage": "58.39%",
     "Homefield_adv_rank": "13 of 32"
     },
     "type": "Feature"
@@ -108,10 +96,7 @@
     "Long": -76.864444,
     "Stadium": "FedEx Field",
     "Conference": "NFC",
-    "Elevation": "197 ft",
     "Homefield_Wins": 64,
-    "Homefield_Losses": 81,
-    "Home Win Percentage": "44.14%",
     "Homefield_adv_rank": "30 of 32"
     },
     "type": "Feature"
@@ -131,10 +116,7 @@
     "Long": -94.483889,
     "Stadium": "Arrowhead Stadium",
     "Conference": "AFC",
-    "Elevation": "843 ft",
     "Homefield_Wins": 91,
-    "Homefield_Losses": 62,
-    "Home Win Percentage": "59.48%",
     "Homefield_adv_rank": "11 of 32"
     },
     "type": "Feature"
@@ -154,10 +136,7 @@
     "Long": -105.02,
     "Stadium": "Sports Authority Field at Mile High",
     "Conference": "AFC",
-    "Elevation": "5197 ft",
     "Homefield_Wins": 100,
-    "Homefield_Losses": 55,
-    "Home Win Percentage": "64.52%",
     "Homefield_adv_rank": "7 of 32"
     },
     "type": "Feature"
@@ -177,10 +156,7 @@
     "Long": -80.238889,
     "Stadium": "Hard Rock Stadium",
     "Conference": "AFC",
-    "Elevation": "10 ft",
     "Homefield_Wins": 73,
-    "Homefield_Losses": 72,
-    "Home Win Percentage": "50.34%",
     "Homefield_adv_rank": "24 of 32"
     },
     "type": "Feature"
@@ -200,10 +176,7 @@
     "Long": -80.852778,
     "Stadium": "Bank of America Stadium",
     "Conference": "NFC",
-    "Elevation": "725 ft",
     "Homefield_Wins": 85,
-    "Homefield_Losses": 65,
-    "Home Win Percentage": "56.67%",
     "Homefield_adv_rank": "16 of 32"
     },
     "type": "Feature"
@@ -223,10 +196,7 @@
     "Long": -90.081111,
     "Stadium": "Mercedes-Benz Superdome",
     "Conference": "NFC",
-    "Elevation": "3 ft",
     "Homefield_Wins": 93,
-    "Homefield_Losses": 59,
-    "Home Win Percentage": "61.18%",
     "Homefield_adv_rank": "10 of 32"
     },
     "type": "Feature"
@@ -246,10 +216,7 @@
     "Long": -81.699444,
     "Stadium": "FirstEnergy Stadium",
     "Conference": "AFC",
-    "Elevation": "581 ft",
     "Homefield_Wins": 55,
-    "Homefield_Losses": 89,
-    "Home Win Percentage": "38.19%",
     "Homefield_adv_rank": "32 of 32"
     },
     "type": "Feature"
@@ -269,10 +236,7 @@
     "Long": -78.786944,
     "Stadium": "Ralph Wilson Stadium",
     "Conference": "AFC",
-    "Elevation": "719 ft",
     "Homefield_Wins": 75,
-    "Homefield_Losses": 69,
-    "Home Win Percentage": "52.08%",
     "Homefield_adv_rank": "23 of 32"
     },
     "type": "Feature"
@@ -292,10 +256,7 @@
     "Long": -86.771389,
     "Stadium": "Nissan Stadium",
     "Conference": "AFC",
-    "Elevation": "397 ft",
     "Homefield_Wins": 78,
-    "Homefield_Losses": 68,
-    "Home Win Percentage": "53.42%",
     "Homefield_adv_rank": "21 of 32"
     },
     "type": "Feature"
@@ -315,10 +276,7 @@
     "Long": -71.26344,
     "Stadium": "Gillette Stadium",
     "Conference": "AFC",
-    "Elevation": "256 ft",
     "Homefield_Wins": 141,
-    "Homefield_Losses": 30,
-    "Home Win Percentage": "82.46%",
     "Homefield_adv_rank": "1 of 32"
     },
     "type": "Feature"
@@ -338,10 +296,7 @@
     "Long": -75.1675,
     "Stadium": "Lincoln Financial Field",
     "Conference": "NFC",
-    "Elevation": "13 ft",
     "Homefield_Wins": 95,
-    "Homefield_Losses": 62,
-    "Home Win Percentage": "60.51%",
     "Homefield_adv_rank": "9 of 32"
     },
     "type": "Feature"
@@ -361,10 +316,7 @@
     "Long": 121.97,
     "Stadium": "Levis Stadium",
     "Conference": "NFC",
-    "Elevation": "16 ft",
     "Homefield_Wins": 84,
-    "Homefield_Losses": 67,
-    "Home Win Percentage": "55.63%",
     "Homefield_adv_rank": "17 of 32"
     },
     "type": "Feature"
@@ -384,10 +336,7 @@
     "Long": -81.6375,
     "Stadium": "EverBank Field",
     "Conference": "AFC",
-    "Elevation": "7 ft",
     "Homefield_Wins": 70,
-    "Homefield_Losses": 75,
-    "Home Win Percentage": "48.28%",
     "Homefield_adv_rank": "26 of 32"
     },
     "type": "Feature"
@@ -407,10 +356,7 @@
     "Long": -122.331667,
     "Stadium": "CenturyLink Field",
     "Conference": "NFC",
-    "Elevation": "16 ft",
     "Homefield_Wins": 109,
-    "Homefield_Losses": 47,
-    "Home Win Percentage": "69.87%",
     "Homefield_adv_rank": "4 of 32"
     },
     "type": "Feature"
@@ -430,10 +376,7 @@
     "Long": -82.503333,
     "Stadium": "Raymond James Stadium",
     "Conference": "NFC",
-    "Elevation": "36 ft",
     "Homefield_Wins": 67,
-    "Homefield_Losses": 81,
-    "Home Win Percentage": "45.27%",
     "Homefield_adv_rank": "28 of 32"
     },
     "type": "Feature"
@@ -453,10 +396,7 @@
     "Long": -84.516039,
     "Stadium": "Paul Brown Stadium",
     "Conference": "AFC",
-    "Elevation": "479 ft",
     "Homefield_Wins": 81,
-    "Homefield_Losses": 67,
-    "Home Win Percentage": "54.73%",
     "Homefield_adv_rank": "19 of 32"
     },
     "type": "Feature"
@@ -476,10 +416,7 @@
     "Long": -80.015833,
     "Stadium": "Heinz Field",
     "Conference": "AFC",
-    "Elevation": "725 ft",
     "Homefield_Wins": 110,
-    "Homefield_Losses": 45,
-    "Home Win Percentage": "70.97%",
     "Homefield_adv_rank": "3 of 32"
     },
     "type": "Feature"
@@ -499,10 +436,7 @@
     "Long": -83.045556,
     "Stadium": "Ford Field",
     "Conference": "NFC",
-    "Elevation": "604 ft",
     "Homefield_Wins": 64,
-    "Homefield_Losses": 80,
-    "Home Win Percentage": "44.44%",
     "Homefield_adv_rank": "29 of 32"
     },
     "type": "Feature"
@@ -522,10 +456,7 @@
     "Long": -112.2625,
     "Stadium": "University of Phoenix Stadium",
     "Conference": "NFC",
-    "Elevation": "1070 ft",
     "Homefield_Wins": 85,
-    "Homefield_Losses": 64,
-    "Home Win Percentage": "57.05%",
     "Homefield_adv_rank": "15 of 32"
     },
     "type": "Feature"
@@ -545,10 +476,7 @@
     "Long": -86.163806,
     "Stadium": "Lucas Oil Stadium",
     "Conference": "AFC",
-    "Elevation": "709 ft",
     "Homefield_Wins": 108,
-    "Homefield_Losses": 48,
-    "Home Win Percentage": "69.23%",
     "Homefield_adv_rank": "5 of 32"
     },
     "type": "Feature"
@@ -568,10 +496,7 @@
     "Long": -122.200556,
     "Stadium": "Oakland Alameda Coliseum",
     "Conference": "AFC",
-    "Elevation": "0 ft",
     "Homefield_Wins": 63,
-    "Homefield_Losses": 83,
-    "Home Win Percentage": "43.15%",
     "Homefield_adv_rank": "31 of 32"
     },
     "type": "Feature"
@@ -585,10 +510,7 @@
     "Long": -84.4009,
     "Stadium": "Mercedes-Benz Stadium",
     "Conference": "NFC",
-    "Elevation": "1007 ft",
     "Homefield_Wins": 87,
-    "Homefield_Losses": 63,
-    "Home Win Percentage": "58.0%",
     "Homefield_adv_rank": "14 of 32"
     },
     "geometry": {
@@ -608,10 +530,7 @@
     "Long": -95.4109,
     "Stadium": "NRG Stadium",
     "Conference": "AFC",
-    "Elevation": "49 ft",
     "Homefield_Wins": 81,
-    "Homefield_Losses": 69,
-    "Home Win Percentage": "54.0%",
     "Homefield_adv_rank": "20 of 32"
     },
     "geometry": {
@@ -631,10 +550,7 @@
     "Long": -76.6227,
     "Stadium": "M&T Bank Stadium",
     "Conference": "AFC",
-    "Elevation": "10 ft",
     "Homefield_Wins": 108,
-    "Homefield_Losses": 42,
-    "Home Win Percentage": "72.0%",
     "Homefield_adv_rank": "6 of 32"
     },
     "geometry": {
@@ -654,10 +570,7 @@
     "Long": -118.2611,
     "Stadium": "StubHub Center",
     "Conference": "AFC",
-    "Elevation": "49 ft",
     "Homefield_Wins": 88,
-    "Homefield_Losses": 61,
-    "Home Win Percentage": "59.06%",
     "Homefield_adv_rank": "12 of 32"
     },
     "geometry": {
@@ -677,10 +590,7 @@
     "Team": "Los Angeles Rams",
     "League": "NFL",
     "Conference": "NFC",
-    "Elevation": "141 ft",
     "Homefield_Wins": 70,
-    "Homefield_Losses": 78,
-    "Home Win Percentage": "47.3%",
     "Homefield_adv_rank": "27 of 32"
     },
     "geometry": {
@@ -700,10 +610,7 @@
     "Long": -87.6167,
     "Stadium": "Soldier Field",
     "Conference": "NFC",
-    "Elevation": "584 ft",
     "Homefield_Wins": 82,
-    "Homefield_Losses": 69,
-    "Home Win Percentage": "54.3%",
     "Homefield_adv_rank": "18 of 32"
     },
     "geometry": {
@@ -723,10 +630,7 @@
     "Long": -93.2575,
     "Stadium": "U.S. Bank Stadium",
     "Conference": "NFC",
-    "Elevation": "856 ft",
     "Homefield_Wins": 96,
-    "Homefield_Losses": 52,
-    "Home Win Percentage": "64.86%",
     "Homefield_adv_rank": "8 of 32"
     },
     "geometry": {
@@ -738,4 +642,4 @@
     }
     }
     ]
-    }
+}
