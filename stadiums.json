@@ -19,7 +19,7 @@
     "Elevation": "7 ft",
     "Homefield_Wins": 72,
     "Homefield_Losses": 75,
-    "Home Win Percentage": "48.98%",
+    "Home_Win_Percentage": "48.98%",
     "Homefield_adv_rank": "25 of 32"
     },
     "type": "Feature"
@@ -42,7 +42,7 @@
     "Elevation": "7 ft",
     "Homefield_Wins": 77,
     "Homefield_Losses": 68,
-    "Home Win Percentage": "53.1%",
+    "Home_Win_Percentage": "53.1%",
     "Homefield_adv_rank": "22 of 32"
     },
     "type": "Feature"
@@ -65,7 +65,7 @@
     "Elevation": "627 ft",
     "Homefield_Wins": 110,
     "Homefield_Losses": 46,
-    "Home Win Percentage": "70.51%",
+    "Home_Win_Percentage": "70.51%",
     "Homefield_adv_rank": "2 of 32"
     },
     "type": "Feature"
@@ -88,7 +88,7 @@
     "Elevation": "568 ft",
     "Homefield_Wins": 87,
     "Homefield_Losses": 62,
-    "Home Win Percentage": "58.39%",
+    "Home_Win_Percentage": "58.39%",
     "Homefield_adv_rank": "13 of 32"
     },
     "type": "Feature"
@@ -111,7 +111,7 @@
     "Elevation": "197 ft",
     "Homefield_Wins": 64,
     "Homefield_Losses": 81,
-    "Home Win Percentage": "44.14%",
+    "Home_Win_Percentage": "44.14%",
     "Homefield_adv_rank": "30 of 32"
     },
     "type": "Feature"
@@ -134,7 +134,7 @@
     "Elevation": "843 ft",
     "Homefield_Wins": 91,
     "Homefield_Losses": 62,
-    "Home Win Percentage": "59.48%",
+    "Home_Win_Percentage": "59.48%",
     "Homefield_adv_rank": "11 of 32"
     },
     "type": "Feature"
@@ -157,7 +157,7 @@
     "Elevation": "5197 ft",
     "Homefield_Wins": 100,
     "Homefield_Losses": 55,
-    "Home Win Percentage": "64.52%",
+    "Home_Win_Percentage": "64.52%",
     "Homefield_adv_rank": "7 of 32"
     },
     "type": "Feature"
@@ -180,7 +180,7 @@
     "Elevation": "10 ft",
     "Homefield_Wins": 73,
     "Homefield_Losses": 72,
-    "Home Win Percentage": "50.34%",
+    "Home_Win_Percentage": "50.34%",
     "Homefield_adv_rank": "24 of 32"
     },
     "type": "Feature"
@@ -203,7 +203,7 @@
     "Elevation": "725 ft",
     "Homefield_Wins": 85,
     "Homefield_Losses": 65,
-    "Home Win Percentage": "56.67%",
+    "Home_Win_Percentage": "56.67%",
     "Homefield_adv_rank": "16 of 32"
     },
     "type": "Feature"
@@ -226,7 +226,7 @@
     "Elevation": "3 ft",
     "Homefield_Wins": 93,
     "Homefield_Losses": 59,
-    "Home Win Percentage": "61.18%",
+    "Home_Win_Percentage": "61.18%",
     "Homefield_adv_rank": "10 of 32"
     },
     "type": "Feature"
@@ -249,7 +249,7 @@
     "Elevation": "581 ft",
     "Homefield_Wins": 55,
     "Homefield_Losses": 89,
-    "Home Win Percentage": "38.19%",
+    "Home_Win_Percentage": "38.19%",
     "Homefield_adv_rank": "32 of 32"
     },
     "type": "Feature"
@@ -272,7 +272,7 @@
     "Elevation": "719 ft",
     "Homefield_Wins": 75,
     "Homefield_Losses": 69,
-    "Home Win Percentage": "52.08%",
+    "Home_Win_Percentage": "52.08%",
     "Homefield_adv_rank": "23 of 32"
     },
     "type": "Feature"
@@ -295,7 +295,7 @@
     "Elevation": "397 ft",
     "Homefield_Wins": 78,
     "Homefield_Losses": 68,
-    "Home Win Percentage": "53.42%",
+    "Home_Win_Percentage": "53.42%",
     "Homefield_adv_rank": "21 of 32"
     },
     "type": "Feature"
@@ -318,7 +318,7 @@
     "Elevation": "256 ft",
     "Homefield_Wins": 141,
     "Homefield_Losses": 30,
-    "Home Win Percentage": "82.46%",
+    "Home_Win_Percentage": "82.46%",
     "Homefield_adv_rank": "1 of 32"
     },
     "type": "Feature"
@@ -341,7 +341,7 @@
     "Elevation": "13 ft",
     "Homefield_Wins": 95,
     "Homefield_Losses": 62,
-    "Home Win Percentage": "60.51%",
+    "Home_Win_Percentage": "60.51%",
     "Homefield_adv_rank": "9 of 32"
     },
     "type": "Feature"
@@ -364,7 +364,7 @@
     "Elevation": "16 ft",
     "Homefield_Wins": 84,
     "Homefield_Losses": 67,
-    "Home Win Percentage": "55.63%",
+    "Home_Win_Percentage": "55.63%",
     "Homefield_adv_rank": "17 of 32"
     },
     "type": "Feature"
@@ -387,7 +387,7 @@
     "Elevation": "7 ft",
     "Homefield_Wins": 70,
     "Homefield_Losses": 75,
-    "Home Win Percentage": "48.28%",
+    "Home_Win_Percentage": "48.28%",
     "Homefield_adv_rank": "26 of 32"
     },
     "type": "Feature"
@@ -410,7 +410,7 @@
     "Elevation": "16 ft",
     "Homefield_Wins": 109,
     "Homefield_Losses": 47,
-    "Home Win Percentage": "69.87%",
+    "Home_Win_Percentage": "69.87%",
     "Homefield_adv_rank": "4 of 32"
     },
     "type": "Feature"
@@ -433,7 +433,7 @@
     "Elevation": "36 ft",
     "Homefield_Wins": 67,
     "Homefield_Losses": 81,
-    "Home Win Percentage": "45.27%",
+    "Home_Win_Percentage": "45.27%",
     "Homefield_adv_rank": "28 of 32"
     },
     "type": "Feature"
@@ -456,7 +456,7 @@
     "Elevation": "479 ft",
     "Homefield_Wins": 81,
     "Homefield_Losses": 67,
-    "Home Win Percentage": "54.73%",
+    "Home_Win_Percentage": "54.73%",
     "Homefield_adv_rank": "19 of 32"
     },
     "type": "Feature"
@@ -479,7 +479,7 @@
     "Elevation": "725 ft",
     "Homefield_Wins": 110,
     "Homefield_Losses": 45,
-    "Home Win Percentage": "70.97%",
+    "Home_Win_Percentage": "70.97%",
     "Homefield_adv_rank": "3 of 32"
     },
     "type": "Feature"
@@ -502,7 +502,7 @@
     "Elevation": "604 ft",
     "Homefield_Wins": 64,
     "Homefield_Losses": 80,
-    "Home Win Percentage": "44.44%",
+    "Home_Win_Percentage": "44.44%",
     "Homefield_adv_rank": "29 of 32"
     },
     "type": "Feature"
@@ -525,7 +525,7 @@
     "Elevation": "1070 ft",
     "Homefield_Wins": 85,
     "Homefield_Losses": 64,
-    "Home Win Percentage": "57.05%",
+    "Home_Win_Percentage": "57.05%",
     "Homefield_adv_rank": "15 of 32"
     },
     "type": "Feature"
@@ -548,7 +548,7 @@
     "Elevation": "709 ft",
     "Homefield_Wins": 108,
     "Homefield_Losses": 48,
-    "Home Win Percentage": "69.23%",
+    "Home_Win_Percentage": "69.23%",
     "Homefield_adv_rank": "5 of 32"
     },
     "type": "Feature"
@@ -571,7 +571,7 @@
     "Elevation": "0 ft",
     "Homefield_Wins": 63,
     "Homefield_Losses": 83,
-    "Home Win Percentage": "43.15%",
+    "Home_Win_Percentage": "43.15%",
     "Homefield_adv_rank": "31 of 32"
     },
     "type": "Feature"
@@ -588,7 +588,7 @@
     "Elevation": "1007 ft",
     "Homefield_Wins": 87,
     "Homefield_Losses": 63,
-    "Home Win Percentage": "58.0%",
+    "Home_Win_Percentage": "58.0%",
     "Homefield_adv_rank": "14 of 32"
     },
     "geometry": {
@@ -611,7 +611,7 @@
     "Elevation": "49 ft",
     "Homefield_Wins": 81,
     "Homefield_Losses": 69,
-    "Home Win Percentage": "54.0%",
+    "Home_Win_Percentage": "54.0%",
     "Homefield_adv_rank": "20 of 32"
     },
     "geometry": {
@@ -634,7 +634,7 @@
     "Elevation": "10 ft",
     "Homefield_Wins": 108,
     "Homefield_Losses": 42,
-    "Home Win Percentage": "72.0%",
+    "Home_Win_Percentage": "72.0%",
     "Homefield_adv_rank": "6 of 32"
     },
     "geometry": {
@@ -657,7 +657,7 @@
     "Elevation": "49 ft",
     "Homefield_Wins": 88,
     "Homefield_Losses": 61,
-    "Home Win Percentage": "59.06%",
+    "Home_Win_Percentage": "59.06%",
     "Homefield_adv_rank": "12 of 32"
     },
     "geometry": {
@@ -680,7 +680,7 @@
     "Elevation": "141 ft",
     "Homefield_Wins": 70,
     "Homefield_Losses": 78,
-    "Home Win Percentage": "47.3%",
+    "Home_Win_Percentage": "47.3%",
     "Homefield_adv_rank": "27 of 32"
     },
     "geometry": {
@@ -703,7 +703,7 @@
     "Elevation": "584 ft",
     "Homefield_Wins": 82,
     "Homefield_Losses": 69,
-    "Home Win Percentage": "54.3%",
+    "Home_Win_Percentage": "54.3%",
     "Homefield_adv_rank": "18 of 32"
     },
     "geometry": {
@@ -726,7 +726,7 @@
     "Elevation": "856 ft",
     "Homefield_Wins": 96,
     "Homefield_Losses": 52,
-    "Home Win Percentage": "64.86%",
+    "Home_Win_Percentage": "64.86%",
     "Homefield_adv_rank": "8 of 32"
     },
     "geometry": {
