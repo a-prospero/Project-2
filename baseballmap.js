@@ -3,6 +3,7 @@ var queryUrl = "fields.json";
 var baseball_url = 'static/data/baseball_stats.csv';
 var football_url = 'stadiums.json';
 var hockey_url = "nhl-stadiums.json";
+var hockey_data_url = 'NHL_HomeWins.csv';
 // Create variarable for icon
 var diamondIcon = L.icon({iconUrl: 'images/diamond.png',
   iconSize: [25,25]
@@ -101,8 +102,8 @@ function createFootballFeatures(footballData) {
         + "</p><hr><p>" + "Wins at home: " + (feature.properties.Homefield_Wins) + "</p> \r\n" + "<p>" + "Homefield Advantage Ranking: "+ (feature.properties.Homefield_adv_rank) + "</p>");
         marker.bindTooltip( `Team: ${feature.properties.Team}<br>
                           Home Wins: ${feature.properties.Homefield_Wins}<br>
-                          Home Losses: N/A <br>
-                          Home Win Percentage: N/A`).addTo(layers.Football);
+                          Home Losses: ${feature.properties.Homefield_Losses} <br>
+                          Home Win Percentage: ${feature.properties.Home_Win_Percentage}`).addTo(layers.Football);
         }
         L.geoJSON(footballData, {
             onEachFeature: onEachFeature
@@ -115,8 +116,7 @@ d3.json(football_url, function(data2) {
 });
 //Define a function for each feature, add popup and tooltip to each hockey rink
 function createHockeyFeatures(hockeyData) {
-    
-function onEachFeature(feature, layer) {
+    function onEachFeature(feature, layer) {
       var marker = L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]],{icon: hockeyIcon})
       marker.bindTooltip("<h3>" + feature.properties.name +
         "</h3><hr><p>" + (feature.properties.team) + "</p>").addTo(layers.Hockey);
@@ -126,12 +126,48 @@ function onEachFeature(feature, layer) {
         }).addTo(layers.Hockey)
 }
 
+//Run function to add hockey arenas to map
 d3.json(hockey_url, function(data) {
   createHockeyFeatures(data.features);
 });
 
+// Read and parse data from hockey csv
+function getHockeyData(){
+  d3.csv(hockey_data_url, function(game_data) {
+    teams = [];
+    h_wins=[];
+    h_losses = [];
+    h_ties = [];
+    win_pct = [];
+    game_data.W = +game_data.W;
+    game_data.L = +game_data.L;
+    game_data.PP = +game_data.PP
+    for (var i = 0; i <game_data.length; ++i) {
+      teams.push(game_data[i].Team)
+      h_wins.push(parseInt(game_data[i].W))
+      h_losses.push(parseInt(game_data[i].L))
+      h_ties.push(parseInt(game_data[i].T))
+      win_pct.push(Math.round(parseFloat(game_data[i].PP) * 100))
+    }
+    
+    console.log(overlayMaps.Hockey._layers)
+    order = [25,0,9,3,8,22,20,10,21,28,2,13,29,17,19,4,18,14,23,7,16,12,11,24,5,1,6,27,15]
+    
+    for (var i = 236, j=0; i<324, j<29 ; i+=3, j++) {
+      if (i === 233) { continue; }
+      if (i === 320) { continue; }
+        var marker = L.marker([overlayMaps.Hockey._layers[233]._layers[i]._latlng.lat, overlayMaps.Hockey._layers[233]._layers[i]._latlng.lng],{icon: hockeyIcon})
+                    marker.bindTooltip(`Team: ${teams[order[j]]}<br>
+                                        Home Wins: ${h_wins[order[j]]}<br>
+                                        Home Losses: ${h_losses[order[j]]}<br>
+                                        Home Win Percentage: ${win_pct[order[j]]}`).addTo(layers.Hockey);
+         }
+  })
+}
+getHockeyData();
+
 // Read and parse data from baseball database
-function getData() {
+function getBaseballData() {
     d3.csv(baseball_url, function(game_data) {
         h_wins=[];
         h_losses =[];
@@ -221,4 +257,4 @@ function getData() {
         }
     });
 }
-getData();
+getBaseballData();
