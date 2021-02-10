@@ -5,7 +5,7 @@ var football_url = 'stadiums.json';
 var hockey_url = "nhl-stadiums.json";
 var hockey_data_url = 'NHL_HomeWins.csv';
 // Create variarable for icon
-var diamondIcon = L.icon({iconUrl: 'images/diamond.png',
+var diamondIcon = L.icon({iconUrl: 'images/baseball.png',
   iconSize: [25,25]
   });
 var footballIcon = L.icon({
@@ -13,7 +13,7 @@ var footballIcon = L.icon({
   iconSize: [25, 25],
   });
 var hockeyIcon = L.icon({
-    iconUrl: 'images/hockey_puck.png',
+    iconUrl: 'images/hockey-icon.png.png',
     iconSize: [25, 25],
 });
 
@@ -150,9 +150,8 @@ function getHockeyData(){
       win_pct.push(Math.round(parseFloat(game_data[i].PP) * 100))
     }
     
-    console.log(overlayMaps.Hockey._layers)
     order = [25,0,9,3,8,22,20,10,21,28,2,13,29,17,19,4,18,14,23,7,16,12,11,24,5,1,6,27,15]
-    
+    // console.log(overlayMaps.Hockey)
     for (var i = 236, j=0; i<324, j<29 ; i+=3, j++) {
       if (i === 233) { continue; }
       if (i === 320) { continue; }
@@ -160,7 +159,7 @@ function getHockeyData(){
                     marker.bindTooltip(`Team: ${teams[order[j]]}<br>
                                         Home Wins: ${h_wins[order[j]]}<br>
                                         Home Losses: ${h_losses[order[j]]}<br>
-                                        Home Win Percentage: ${win_pct[order[j]]}`).addTo(layers.Hockey);
+                                        Home Win Percentage: ${win_pct[order[j]]}%`).addTo(layers.Hockey);
          }
   })
 }
@@ -247,6 +246,7 @@ function getBaseballData() {
         order = [1,26,1,22,27,20,0,14,29,10,9,13,16,7,31,4,21,12,24,8,1,25,30,28,2,23,17,5,19,6,11,3]
         
         // Iterate through records objects and create tooltips and add to baseball layer
+        // console.log(overlayMaps.Baseball)
         for(var i = 1; i < 32; i++) {
             if (i===2) { continue; }
             var marker = L.marker([overlayMaps.Baseball._layers[41]._layers[(i+39)]._latlng.lat, overlayMaps.Baseball._layers[41]._layers[(i+39)]._latlng.lng],{icon: diamondIcon})
