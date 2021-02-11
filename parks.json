@@ -1,0 +1,228 @@
+
+    "properties": {
+    "Team": "Houston Astros",
+    "Lat": 29.75694,
+    "Long": -95.35556,
+    "Field": "Minute Maid Park"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -81.6375,
+    30.323889
+    ]
+    },
+    "properties": {
+    "Team": "San Diego Padres",
+    "Lat": 32.7073,
+    "Long": -117.1566,
+    "Field": "Petco Park"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -122.331667,
+    47.595278
+    ]
+    },
+    "properties": {
+    "Team": "Cleveland Indians",
+    "Lat": 41.49583,
+    "Long": -81.68528,
+    "Field": "Progressive Field"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -82.503333,
+    27.975833
+    ]
+    },
+    "properties": {
+    "Team": "Arizona Diamondbacks",
+    "Lat": 33.44528,
+    "Long": -112.06694,
+    "Field": "Chase Field"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -84.516039,
+    39.095444
+    ]
+    },
+    "properties": {
+    "Team": "Seattle Mariners",
+    "Lat": 47.59139,
+    "Long": -122.3325,
+    "Field": "Safeco Field"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -80.015833,
+    40.446667
+    ]
+    },
+    "properties": {
+    "Team": "Toronto Blue Jays",
+    "Lat": 43.64139,
+    "Long": -79.38917,
+    "Field": "Rogers Centre"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -83.045556,
+    42.34
+    ]
+    },
+    "properties": {
+    "Team": "Tampa Bay Rays",
+    "Lat": 27.76833,
+    "Long": -82.65333,
+    "Field": "Tropicana Field"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -112.2625,
+    33.5275
+    ]
+    },
+    "properties": {
+    "Team": "Atlanta Braves",
+    "Lat": 33.73528,
+    "Long": -84.38944,
+    "Field":  "Turner Field"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -86.163806,
+    39.760056
+    ]
+    },
+    "properties": {
+    "Team": "Pittsburgh Pirates",
+    "Lat": 40.44694,
+    "Long": -80.00583,
+    "Field":  "PNC Park"
+    },
+    "type": "Feature"
+    },
+    {
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -122.200556,
+    37.751667
+    ]
+    },
+    "properties": {
+    "Team": "Minnesota Twins",
+    "Lat": 44.98167,
+    "Long": -93.27833,
+    "Field":  "Target Field"
+    },
+    "type": "Feature"
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "Team": "Chicago White Sox",
+    "Lat": 41.83,
+    "Long": -87.63389,
+    "Field": "U.S. Cellular Field"
+    },
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -84.40092086791992,
+    33.755173286674825
+    ]
+    }
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "Team": "New York Yankees",
+    "Lat": 40.82917,
+    "Long": -73.92639,
+    "Field": "Yankee Stadium"
+    },
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -95.41093826293944,
+    29.684883725361402
+    ]
+    }
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "Team": "Chicago Cubs",
+    "Lat": 41.94833,
+    "Long": -87.65556,
+    "Field": "Wrigley Field"
+    },
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -76.62272930145264,
+    39.2781117405251
+    ]
+    }
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "Team": "Marlins Park",
+    "Lat": 25.77806,
+    "Long": -80.21972,
+    "Field": "Miami Marlins"
+    },
+    "geometry": {
+    "type": "Point",
+    "coordinates": [
+    -118.26112747192383,
+    33.86435779106245
+    ]
+    }
+    },
+    {
+    "type": "Feature",
+    "properties": {
+    "Field": "Oriole Park at Camden Yards",
+    "Long": -76.62167,
+    "Lat": 39.28389,
+    "Team": "Baltimore Orioles"
+    },
+    ]
+    }
+    }
