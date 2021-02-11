@@ -31,6 +31,16 @@ function createFeatures(nflData) {
   // Create a GeoJSON layer containing the features array on the stadium object
   // Run the onEachFeature function once for each piece of data in the array
   var stadiums = L.geoJSON(nflData, {
+    pointToLayer: function(feature, pointLayer){
+      return new L.circle(pointLayer, 
+        {
+          color: 'brown',
+          fillColor: 'brown',
+          opacity: 0,
+          fillOpacity: 0.8,
+          radius: 20000
+        }) 
+    },
     onEachFeature: onEachFeature
   });
 
@@ -77,17 +87,8 @@ function createMap(stadiums) {
     layers: [streetmap, stadiums]
   });
 
-  // //Create football icon
-  // var myIcon = L.icon({
-  //   iconURL: 'football.png',
-  //   iconSize: [38, 95],
-  //   iconAnchor: [22, 94]
-  //     })
-  //   L.marker([stadiums], {icon: myIcon}).addTo(myMap);  
 
-  // Create a layer control
-  // Pass in our baseMaps and overlayMaps
-  // Add the layer control to the map
+
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
