@@ -1,19 +1,12 @@
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+const nflUrl = "'/nfl_work/transformed_nfl_data.csv'";
+const nhlUrl = '/NHL_HomeWins.csv'
+const mblURL = '/static/baseball_stats.csv'
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
+// Fetch the JSON data and console log it
+d3.json(url).then(function(data) {
+  console.log(data);
+});
+
+// Promise Pending
+const dataPromise = d3.json(url);
+console.log("Data Promise: ", dataPromise);

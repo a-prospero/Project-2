@@ -20,12 +20,16 @@
   <div id="chartDiv" style="width:50%; height:300px; margin:0 auto;"></div>
 
   <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Charts</button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="nflchart.js">NFL Chart</a>
-      <a href="nhlchart.js">NHL Chart</a>
-      <a href="mlbchart.js">MLB Chart</a>
+    
+    <select id="selDataset" onchange="getData(this.value)">
+      <option value="nflchart.js">NFL Chart</option>
+      <option value="nhlchart.js">NHL Chart</option>
+      <option value="mlbchart.js">MLB Chart</option>
+  </select>
     </div>
+    <script src="nflchart.js"></script>
+    <script src="nhlchart.js"></script>
+    <script src="mlbchart.js"></script>
   </div>
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="style.css">
