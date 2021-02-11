@@ -1,4 +1,4 @@
-fetch('/nfl_work/transformed_nfl_data.csv')
+fetch('/static/baseball_stats.csv')
    .then(function (response) {
       return response.text();
    })
@@ -20,7 +20,7 @@ fetch('/nfl_work/transformed_nfl_data.csv')
          if (row.teams === '49ers','Bears', 'Bengals', 'Bills', 'Broncos', 'Browns', 'Buccaneers', 'Cardinals', 'Chargers', 'Chiefs', 'Colts', 'Cowboys', 'Dolphins', 'Eagles', 'Falcons', 'Giants', 'Jaquars', 'Jets', 'Lions', 'Packers', 'Panthers', 'Patriots', 'Raiders', 'Rams', 'Ravens', 'Redskins', 'Saints', 'Seahawks', 'Steelers', 'Texans', 'Titans', 'Vikings' ) {
 			if (row.wins >0) {
 				wins.push({x: row.teams, y: row["wins"]});
-			} else if (row.losses >0) {
+			
 				losses.push({x: row.teams, y: row["losses"]});
 			}
 		}    
