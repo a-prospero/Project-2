@@ -1,12 +1,37 @@
-const nflUrl = "'/nfl_work/transformed_nfl_data.csv'";
-const nhlUrl = '/NHL_HomeWins.csv'
-const mblURL = '/static/baseball_stats.csv'
+// Create an array of each country's numbers
+var nfl = Object.values('/nflchart.js');
+var nhl = Object.values('/mlbchart.js');
+var mlb = Object.values('/nhlchart.js');
 
-// Fetch the JSON data and console log it
-d3.json(url).then(function(data) {
-  console.log(data);
-});
+// Create an array of music provider labels
+var labels = Object.keys(data.us);
 
-// Promise Pending
-const dataPromise = d3.json(url);
-console.log("Data Promise: ", dataPromise);
+
+
+// On change to the DOM, call getData()
+d3.selectAll("#selDataset").on("change", getData);
+
+// Function called by DOM changes
+function getData() {
+  var dropdownMenu = d3.select("#selDataset");
+  // Assign the value of the dropdown menu option to a variable
+  var dataset = dropdownMenu.property("value");
+  // Initialize an empty array for the country's data
+  var data = [];
+
+  if (dataset == 'nfl') {
+      data = nfl;
+  }
+  else if (dataset == 'nhl') {
+      data = nhl;
+  }
+  else if (dataset == 'mlb') {
+      data = mlb;
+  }
+  // Call function to update the chart
+  updatePlotly(data);
+}
+
+
+
+init();
