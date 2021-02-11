@@ -53,7 +53,7 @@ var overlayMaps = {
     "Hockey": layers.Hockey
 };
 
-// Create our map, giving it the streetmap and earthquakes layers to display on load
+// Create our map, giving it the streetmap and sports layers to display on load
 var myMap = L.map("map", {
 center: [
 37.09, -95.71

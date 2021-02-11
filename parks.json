@@ -1,5 +1,8 @@
 
-    "properties": {
+   {
+   "type": "FeatureCollection",
+    "features": [
+    {"properties": {
     "Team": "Houston Astros",
     "Lat": 29.75694,
     "Long": -95.35556,

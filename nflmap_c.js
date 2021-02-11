@@ -35,7 +35,7 @@ function createFeatures(data) {
     onEachFeature: onEachFeature,
   });
   return stadiums;
-  // Sending our earthquakes layer to the createMap function
+  // Sending our layer to the createMap function
   //createMap(stadiums);
 }
 // Store our API endpoint inside queryUrl
@@ -50,19 +50,19 @@ createFeaturez(data.features);
 });
 function createFeaturez(ballData) {
 // Define a function we want to run once for each feature in the features array
-// Give each feature a popup describing the place and time of the earthquake
+// Give each feature a popup describing the place and time of the fields
 function onEachFeature(feature, layer) {
   layer.bindPopup("<h3>" + feature.properties.name +
     "</h3><hr><p>" + (feature.properties.team) + "</p>");
 }
 
-// Create a GeoJSON layer containing the features array on the earthquakeData object
+// Create a GeoJSON layer containing the features array on the baseball object
 // Run the onEachFeature function once for each piece of data in the array
 var fields = L.geoJSON(ballData, {
   onEachFeature: onEachFeature
 });
 
-// Sending our earthquakes layer to the createMap function
+// Sending our stadiums layer to the createMap function
 createMap(stadiums);
 }
 function createMap(stadiums, fields) {
