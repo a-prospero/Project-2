@@ -1,4 +1,4 @@
-fetch('/nfl_work/transformed_nfl_data.csv')
+fetch('./nfl_work/transformed_nfl_data.csv')
    .then(function (response) {
       return response.text();
    })
