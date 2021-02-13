@@ -81,5 +81,12 @@ function createMap(arenas) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
+<<<<<<< HEAD
 }
+<<<<<<< HEAD:static/js/app.js
+=======
+}
+>>>>>>> 96e17be6759ab0b7f4d74ee6538f2d01aebe6744
+=======
 
+>>>>>>> 4563085f1a683718e6ec7db7be6447ed09a5950e:hockey.js
